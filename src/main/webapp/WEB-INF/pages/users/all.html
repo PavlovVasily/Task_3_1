@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<p style="text-align:left;font-size: 120%;">Пользователи</p>
+
+<div th:each="user : ${users}">
+    <a th:href="@{/users/{id}(id=${user.getId()})}"
+       th:text="${user.name} + ',' + ${user.age}">
+    </a>
+</div>
+
+<br>
+<a th:href="@{/users/new}">Добавить пользователя</a>
+</table>
+
+
+</body>
+</html>
